@@ -1,19 +1,21 @@
-//int[] xpoints;
-//int[] ypoints;
-
 void setup(){
-  size(500, 500);
+  size(600, 500);
+  background(255);
 }
   
 void draw(){
-  strokeWeight(10);
-  line(0,0,width/2,height/2);
-  line(width,0,width/2,height/2);
-  line(0,height,width/2,height/2);
-  line(500,500,width/2, height/2);
-   
-
+  strokeWeight(1);
+  stroke(30);
+  smooth();
   
-  //xpoints = new int[16];
- // ypoints = new int[16];
+  point(width,0);
+  point(450,500);
+  line(width,0,450,500);
+  
+  noFill();
+  stroke(204,102,0);
+  //arc(500, 225, 100, 80, PI+QUARTER_PI, TWO_PI);
+  arc(500, 225, 100, 80, QUARTER_PI, TWO_PI);
+  
+ 
   }
