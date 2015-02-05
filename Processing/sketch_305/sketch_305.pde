@@ -15,7 +15,8 @@ void draw(){
   noFill();
   stroke(204,102,0);
   //arc(500, 225, 100, 80, PI+QUARTER_PI, TWO_PI);
-  arc(500, 225, 100, 80, QUARTER_PI, TWO_PI);
+  //arc(500, 225, 100, 80, QUARTER_PI, TWO_PI);
+  arc(500, 225, 100, 100, degrees(0), TWO_PI/2);
   
  
   }
