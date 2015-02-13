@@ -15,7 +15,7 @@ void setup() {
 
     point(xpoints[n], ypoints[n]);
     
-    //text("i am point number: "+n, xpoints[n], ypoints[n]);
+   // text("i am point number: "+n, xpoints[n], ypoints[n]);
   }
     stroke(30, 60);
     for (int n=0; n<50; n++) {
