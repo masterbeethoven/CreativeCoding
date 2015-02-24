@@ -10,9 +10,10 @@ String[] headers;
 int[][] data; 
 
 void setup(){
-  size(800,800);
+  size(displayWidth, displayHeight);
   background(0);
   smooth();
+  
   // load csv file into String array
   String [] lines = loadStrings("Cyclist_Count_by_Year_At_Selected_Commuter_Locations.csv");
   
@@ -66,4 +67,14 @@ void draw(){
   // draw something awesome with the data matrix and headers array
   // to access individual data cells all you have to do is call data[row][col],
   // where row is an int row number, and col is an int column number
-}
+  //for loop to pull just the heading titles, 
+for (int i=1;i<headers.length;i++){
+  smooth();
+  fill(255);
+  text(headers[i].substring(1,headers[i].length()-1),10,50+i*50);
+  
+
+   }
+ }
+  
+
