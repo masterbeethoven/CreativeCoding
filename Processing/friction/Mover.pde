@@ -8,6 +8,8 @@ class Mover {
   PVector velocity;
   PVector acceleration;
   float mass;
+  float xSpeed = 0;
+  float ySpeed = 0;
 
   Mover(float m, float x , float y) {
     mass = m;
@@ -48,6 +50,13 @@ class Mover {
       velocity.y *= -1;
       location.y = height;
     }
+    
+    if (mouseX-pmouseX > 0){
+      xSpeed = abs(mouseX-pmouseX);
+    } else {
+      xSpeed = -abs(mouseX-pmouseX);
+    }
+  
 
   }
 

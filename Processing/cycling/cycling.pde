@@ -68,7 +68,7 @@ void setup(){
 void draw(){
   
   img = loadImage("bike.png");
-   image(img,0,0);
+   //image(img,0,0);
   // draw something awesome with the data matrix and headers array
   // to access individual data cells all you have to do is call data[row][col],
   // where row is an int row number, and col is an int column number
@@ -93,13 +93,13 @@ for (int i=1;i<headers.length;i++){
         // here j!=8 i.e. we are in the column with each year's cycle rides
         // normalizing size of ellipse by dividing by 100
       size=size/100;
-      ellipse( 250+i*30,50+j*50,size,size);
+      image( img,250+i*30,50+j*50,size,size);
       }
        else{
         // here j=8 i.e. we are in the Grand Total column
         // normalizing size of ellipse by dividing by 300
       size=size/300;
-      ellipse( 250+i*30,50+j*50,size,size); 
+      image(img, 250+i*30,50+j*50,size,size); 
     } 
       }
    }

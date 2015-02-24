@@ -1,8 +1,9 @@
 // The Nature of Code
 // Daniel Shiffman
 // http://natureofcode.com
-
 Mover[] movers = new Mover[5];
+float xSpeed=0;
+float ySpeed=0;
 
 void setup() {
   size(383, 200);
@@ -14,6 +15,18 @@ void setup() {
 
 void draw() {
   background(255);
+  
+  /*if(mouseX-pmouseX > 0){
+    xSpeed = abs(mouseX-pmouseX);
+  } else {
+    xSpeed = -abs(mouseX-pmouseX);
+  }
+  
+   if ( mouseY-pmouseY > 0 ) {
+    ySpeed = abs(mouseY-pmouseY);
+  } else {
+    ySpeed = -abs(mouseY-pmouseY);
+  }*/
 
   for (int i = 0; i < movers.length; i++) {
 
@@ -34,6 +47,10 @@ void draw() {
     movers[i].display();
     movers[i].checkEdges();
   }
+  
+
+  
+
 }
 
 
