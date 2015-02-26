@@ -5,9 +5,7 @@ float ySpeed = 0;
  
 void setup() {
   size(383, 200);
-  stroke(0);
-  strokeWeight(2);
-  fill(0,127);
+  fill(0);
   for (int i=0; i < movers.length; i++) {
     movers[i] = new Mover(color(random(200)),random(width),random(height),10,0,0);
   }
@@ -73,9 +71,10 @@ class Mover {
   }
  
   void display() {
-    fill(c);
+    fill(0,127);
     noStroke();
-    ellipse(x,y,w,w);
+    strokeWeight(2);
+    ellipse((x*2),(y),(w*2),(w*2));
   }
  
   void move() {
