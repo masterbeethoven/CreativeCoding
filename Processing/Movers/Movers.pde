@@ -70,13 +70,17 @@ class Mover {
     speedY = speedY + gravity;
   }
  
+ //the original movers characteristics 
   void display() {
     fill(0,127);
     noStroke();
     strokeWeight(2);
-    ellipse((x*2),(y),(w*2),(w*2));
+    ellipse((x),(y),(w*2),(w*2));
   }
  
+ //establishing relationships between the 'height' of where the mover is dropped
+ //to its speed 
+ //multiple it by -0.95
   void move() {
     y = y + speedY;
     if (y > height) {
