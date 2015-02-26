@@ -8,6 +8,7 @@ class Mover {
   PVector velocity;
   PVector acceleration;
   float mass;
+  float gravity = 0.1;
   float xSpeed = 0;
   float ySpeed = 0;
 
@@ -17,6 +18,30 @@ class Mover {
     velocity = new PVector(0,0);
     acceleration = new PVector(0,0);
   }
+  
+  void draw(){
+   if ( mouseX-pmouseX > 0 ) {
+    xSpeed = abs(mouseX-pmouseX);
+  } else {
+    xSpeed = -abs(mouseX-pmouseX);
+  }
+   
+  if ( mouseY-pmouseY > 0 ) {
+    ySpeed = abs(mouseY-pmouseY);
+  } else {
+    ySpeed = -abs(mouseY-pmouseY);
+  }
+  println(xSpeed);
+  
+   for (int i=0; i < movers.length; i++) {
+    movers[i].gravity();
+    movers[i].move();
+    movers[i].display();
+  }
+  
+  }
+  
+
   
   void applyForce(PVector force) {
     PVector f = PVector.div(force,mass);
@@ -50,13 +75,6 @@ class Mover {
       velocity.y *= -1;
       location.y = height;
     }
-    
-    if (mouseX-pmouseX > 0){
-      xSpeed = abs(mouseX-pmouseX);
-    } else {
-      xSpeed = -abs(mouseX-pmouseX);
-    }
-  
 
   }
 

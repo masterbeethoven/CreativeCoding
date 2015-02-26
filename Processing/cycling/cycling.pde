@@ -12,7 +12,7 @@ PImage img;
 
 void setup(){
   size(displayWidth, displayHeight);
-  background(209);
+  background(0);
   smooth();
 
   
@@ -75,25 +75,27 @@ void draw(){
   //for loop to pull just the heading titles, title[array of all the cities] 
 for (int i=1;i<headers.length;i++){
   smooth();
-  fill(0);
+  fill(255);
  //text(headers[i].substring(1,headers[i].length()-1),10,50+i*50);
+  textSize(10);
  text(headers[i],10,50+i*50);
    }
    for (int i=0;i<data.length;i++){
-    fill( random(255), random(255), random(255));
+    //fill( random(255), random(255), random(255));
+    fill(255);
       for (int j=0;j<data[0].length;j++){
       int size=data[i][j];
       if(j==0){
         // here j!=8 i.e. we are in the column with the year as value
         // writing each year in text
-        //textSize(10);
+       
         text(data[i][j],250+i*30,50+j*50);
       }
        else if (j!=8){
         // here j!=8 i.e. we are in the column with each year's cycle rides
         // normalizing size of ellipse by dividing by 100
       size=size/100;
-      image( img,250+i*30,50+j*50,size,size);
+      image(img,250+i*30,50+j*50,size,size);
       }
        else{
         // here j=8 i.e. we are in the Grand Total column
