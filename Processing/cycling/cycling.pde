@@ -14,7 +14,7 @@ void setup(){
   size(displayWidth, displayHeight);
   background(0);
   smooth();
-
+  img = loadImage("bike.png");
   
   // load csv file into String array
   String [] lines = loadStrings("Cyclist_Count_by_Year_At_Selected_Commuter_Locations.csv");
@@ -67,7 +67,7 @@ void setup(){
 }
 void draw(){
   
-  img = loadImage("bike.png");
+  //img = loadImage("bike.png");
    //image(img,0,0);
   // draw something awesome with the data matrix and headers array
   // to access individual data cells all you have to do is call data[row][col],
@@ -78,6 +78,7 @@ for (int i=1;i<headers.length;i++){
   fill(255);
 
  //years
+ textSize(10);
  text(headers[i],10,50+i*50);
    }
    for (int i=0;i<data.length;i++){
