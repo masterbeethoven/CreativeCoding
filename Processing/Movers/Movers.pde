@@ -3,11 +3,26 @@ float gravity = 0.1;
 float xSpeed = 0;
 float ySpeed = 0;
  
+import ddf.minim.*;
+
+Minim minim;
+AudioPlayer player;
+
+AudioPlayer one; 
+AudioPlayer two; 
+AudioPlayer three; 
+AudioPlayer four; 
+AudioPlayer five; 
+AudioPlayer[] array; 
+
+
 void setup() {
   size(383, 200);
   fill(0);
   for (int i=0; i < movers.length; i++) {
     movers[i] = new Mover(color(random(200)),random(width),random(height),10,0,0);
+  minim = new Minim(this);
+  
   }
 }
  
@@ -30,7 +45,8 @@ void draw() {
     ySpeed = -abs(mouseY-pmouseY);
   }
    
-  println(xSpeed);
+  //prints out vertical movements, just to make sure it's working
+  //println(xSpeed);
    
   for (int i=0; i < movers.length; i++) {
     movers[i].gravity();
@@ -42,6 +58,14 @@ void draw() {
 void mousePressed() {
   Mover b = new Mover(color(random(200)),mouseX,mouseY,10,xSpeed,ySpeed);
   movers = (Mover[]) append(movers,b);
+  array = new AudioPlayer[5];
+  array[0] = minim.loadFile("100.wav"); 
+  array[1] = minim.loadFile("101.wav"); 
+  array[2] = minim.loadFile("105.wav"); 
+  array[3] = minim.loadFile("106.wav"); 
+  array[4]= minim.loadFile("94.wav");
+  player = minim.loadFile("94.wav");
+  player.play();
 }
  
  
