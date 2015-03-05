@@ -21,7 +21,7 @@ void setup()
   // loadFile will look in all the same places as loadImage does.
   // this means you can find files that are in the data folder and the 
   // sketch folder. you can also pass an absolute path, or a URL.
-  player = minim.loadFile("marcus_kellis_theme.mp3");
+  player = minim.loadFile("Monkeys Spinning Monkeys.mp3");
   
   // play the file from start to finish.
   // if you want to play the file again, 

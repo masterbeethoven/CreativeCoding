@@ -58,14 +58,16 @@ void draw() {
 void mousePressed() {
   Mover b = new Mover(color(random(200)),mouseX,mouseY,10,xSpeed,ySpeed);
   movers = (Mover[]) append(movers,b);
+  //every time mouse pressed, random sound from this array for 5 sounds
   array = new AudioPlayer[5];
   array[0] = minim.loadFile("100.wav"); 
   array[1] = minim.loadFile("101.wav"); 
   array[2] = minim.loadFile("105.wav"); 
   array[3] = minim.loadFile("106.wav"); 
   array[4]= minim.loadFile("94.wav");
-  player = minim.loadFile("94.wav");
-  player.play();
+  int index = int( random(0,5) ); 
+  array[index].play(); 
+
 }
  
  
@@ -106,15 +108,22 @@ class Mover {
  //to its speed 
  //multiple it by -0.95
   void move() {
+   
     y = y + speedY;
     if (y > height) {
       speedY = speedY *-0.95;
       y = height;
+      //so slow? loadFile the culprit?
+      /*player= minim.loadFile("94.wav");
+      player.play(); */
     }
     x = x + speedX;
     if (x > width) {
       speedX = speedX *-1;
       x = width;
+      //right side hits
+      player= minim.loadFile("94.wav");
+      player.play(); 
     }
     if (x < 0) {
       speedX = speedX *-1;
@@ -123,3 +132,22 @@ class Mover {
   }
 }
 
+
+/*test
+
+ player= minim.loadFile("94.wav");
+ 
+  player.play(); 
+  
+  */
+
+/*  
+array = new AudioPlayer[5];
+  array[0] = minim.loadFile("100.wav"); 
+  array[1] = minim.loadFile("101.wav"); 
+  array[2] = minim.loadFile("105.wav"); 
+  array[3] = minim.loadFile("106.wav"); 
+  array[4]= minim.loadFile("94.wav");
+  int index = int( random(0,5) ); 
+  array[index].play(); 
+  */
