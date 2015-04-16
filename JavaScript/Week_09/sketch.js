@@ -21,7 +21,7 @@ function setup() {
   //changed from size
   createCanvas(383, 200);
   fill(0);
-  for (int i=0; i < movers.length; i++) {
+  for (var i=0; i < movers.length; i++) {
     movers[i] = new Mover(color(random(200)),random(width),random(height),10,0,0);
   minim = new Minim(this);
   
@@ -51,7 +51,7 @@ function draw() {
   //prints out vertical movements, just to make sure it's working
   //println(xSpeed);
    
-  for (int i=0; i < movers.length; i++) {
+  for (var i=0; i < movers.length; i++) {
     movers[i].gravity();
     movers[i].move();
     movers[i].display();
@@ -69,7 +69,7 @@ function touchStarted() {
   array[2] = minim.loadFile("105.wav"); 
   array[3] = minim.loadFile("106.wav"); 
   array[4]= minim.loadFile("94.wav");
-  int index = int( random(0,5) ); 
+  var index = var( random(0,5) ); 
   array[index].play(); 
 
 }
