@@ -1,4 +1,8 @@
-Mover[] movers = new Mover[5];
+//changed from Mover[] movers = new Mover[5];
+var movers = [];
+for(var i=0; i<5;i++){
+  movers.push(new Mover());
+}
 //changed from float
 var gravity = 0.1;
 var xSpeed = 0;
@@ -51,6 +55,7 @@ function draw() {
   //prints out vertical movements, just to make sure it's working
   //println(xSpeed);
    
+  //changed from int 
   for (var i=0; i < movers.length; i++) {
     movers[i].gravity();
     movers[i].move();
