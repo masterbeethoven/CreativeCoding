@@ -10,7 +10,7 @@ var ySpeed = 0;
  
 //import ddf.minim.*;
 
-Minim minim;
+/*Minim minim;
 AudioPlayer player;
 
 AudioPlayer one; 
@@ -18,7 +18,7 @@ AudioPlayer two;
 AudioPlayer three; 
 AudioPlayer four; 
 AudioPlayer five; 
-AudioPlayer[] array; 
+AudioPlayer[] array; */
 
 //changed from void 
 function setup() {
@@ -65,17 +65,20 @@ function draw() {
  //changed from mousePressed()
 //changed from void 
 function touchStarted() {
-  Mover b = new Mover(color(random(200)),mouseX,mouseY,10,xSpeed,ySpeed);
-  movers = (Mover[]) append(movers,b);
+
+  //Mover b = new Mover(color(random(200)),mouseX,mouseY,10,xSpeed,ySpeed);
+  var moverB = new Mover(color(random(200)),mouseX,mouseY,10,xSpeed,ySpeed);
+  //movers = (Mover[]) append(movers,b);
+  movers.push(moverB); //increasing array by 1 
   //every time mouse pressed, random sound from this array for 5 sounds
-  array = new AudioPlayer[5];
+  /*array = new AudioPlayer[5];
   array[0] = minim.loadFile("100.wav"); 
   array[1] = minim.loadFile("101.wav"); 
   array[2] = minim.loadFile("105.wav"); 
   array[3] = minim.loadFile("106.wav"); 
   array[4]= minim.loadFile("94.wav");
   var index = var( random(0,5) ); 
-  array[index].play(); 
+  array[index].play(); */
 
 }
  
